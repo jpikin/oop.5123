@@ -7,10 +7,13 @@ public class StockClient implements iActorBehaviour {
 
     private boolean isTakeOrder;
     private boolean isMakeOrder;
+    private boolean isReturnOrder;
+    private boolean isTakeBackMoney;
     public static int countStockClient;
     public static int maxNumStockClient = 4;
     private int idStockClient;
     private String name;
+    private boolean returnOrder;
 
     public StockClient(String name, int idStockClient) {
         this.name = name;
@@ -32,6 +35,16 @@ public class StockClient implements iActorBehaviour {
         return isMakeOrder;
     }
 
+    @Override
+    public boolean isReturnOrder() {
+        return isReturnOrder;
+    }
+
+    @Override
+    public boolean isTakeBackMoney() {
+        return isTakeBackMoney;
+    }
+
 
     @Override
     public void setTakeOrder(boolean take) {
@@ -46,7 +59,7 @@ public class StockClient implements iActorBehaviour {
 
     @Override
     public Actor getActor() {
-        return new OrdinaryClient(name);
+        return new OrdinaryClient(name, returnOrder);
     }
 
 
