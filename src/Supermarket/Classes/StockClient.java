@@ -1,17 +1,20 @@
 package Supermarket.Classes;
 
 import Supermarket.Interfaces.iActorBehaviour;
+import Supermarket.Interfaces.iReturnOrder;
 
-public class TaxInspector implements iActorBehaviour {
-
-    private String name;
+public class StockClient implements iActorBehaviour, iReturnOrder {
+    private boolean isReturnOrder;
     private boolean isTakeOrder;
     private boolean isMakeOrder;
-    private boolean isReturnOrder;
+    public static int countStockClient;
+    public static int maxNumStockClient = 4;
+    private int idStockClient;
+    private String name;
 
-
-    public TaxInspector() {
-        this.name = "Tax audit";
+    public StockClient(String name, int idStockClient) {
+        this.name = name;
+        this.idStockClient = idStockClient;
     }
 
     public String getName()
@@ -31,7 +34,7 @@ public class TaxInspector implements iActorBehaviour {
 
     @Override
     public boolean isReturnOrder() {
-        return false;
+        return isReturnOrder;
     }
 
     @Override
@@ -45,8 +48,9 @@ public class TaxInspector implements iActorBehaviour {
     }
 
     @Override
-    public void setReturnOrder(boolean returN) { isReturnOrder = returN; }
-
+    public void setReturnOrder(boolean returN) {
+        isReturnOrder = returN;
+    }
     @Override
     public Actor getActor() {
         return new OrdinaryClient(name);
@@ -57,4 +61,13 @@ public class TaxInspector implements iActorBehaviour {
 
     }
 
+    @Override
+    public void returnOrder() {
+
+    }
+
+    @Override
+    public void takeBackMoney() {
+
+    }
 }

@@ -7,8 +7,12 @@ import Supermarket.Interfaces.iActorBehaviour;
 
 import Supermarket.Interfaces.iMarketBehaviour;
 import Supermarket.Interfaces.iQueueBehaviour;
+import Supermarket.Interfaces.iReturnOrder;
+import static Supermarket.Classes.StockClient.countStockClient;
 
-public class Market implements iMarketBehaviour, iQueueBehaviour {
+public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
+
+    public int sumStockClients = 0;
 
     private List<iActorBehaviour> queue;
 
@@ -16,10 +20,20 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
         this.queue = new ArrayList<iActorBehaviour>();
     }
 
+    /**
+     * @apiNote Метод сообщает, что в магазин зашел клиент.
+     * Если клиент относится к группе акционные, то счетчик countStockClient увеличивается на 1.
+     * @param actor Клиент
+     */
     @Override
     public void acceptToMarket(iActorBehaviour actor) {
-        System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");
+        if (actor instanceof StockClient) {
+            countStockClient += 1;
+            System.out.println(actor.getActor().getName() + " клиент пришел в магазин," +
+                    " количество участников акции: "+ countStockClient);
+        }else{System.out.println(actor.getActor().getName() + " клиент пришел в магазин ");}
         takeInQueue(actor);
+
     }
 
     @Override
@@ -47,9 +61,11 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     @Override
     public void giveOrder() {
         for (iActorBehaviour actor : queue) {
-            if (actor.isMakeOrder()) {
-                actor.setTakeOrder(true);
-                System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
+            if (actor.isReturnOrder()) {
+                if (actor.isMakeOrder()) {
+                    actor.setTakeOrder(true);
+                    System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
+                }
             }
         }
 
@@ -70,13 +86,29 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     @Override
     public void takeOrder() {
         for (iActorBehaviour actor : queue) {
-            if (!actor.isMakeOrder()) {
-                actor.setMakeOrder(true);
-                System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
-
+            if (actor.isReturnOrder()) {
+                if (!actor.isMakeOrder()) {
+                    actor.setMakeOrder(true);
+                    System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
+                }
             }
         }
-
     }
-
+        @Override
+    public void returnOrder() {
+            for (iActorBehaviour actor : queue) {
+                if (!actor.isReturnOrder()) {
+                    actor.setReturnOrder(true);
+                    System.out.println(actor.getActor().getName() + " клиент сделал возврат заказа ");
+                }
+            }
+    }
+    public void takeBackMoney(){
+        for (iActorBehaviour actor : queue) {
+            if (actor.isReturnOrder()) {
+                actor.setGetBackMoney(true);
+                System.out.println(actor.getActor().getName() + " клиент получил деньги за возвращенный товар ");
+            }
+        }
+    }
 }
