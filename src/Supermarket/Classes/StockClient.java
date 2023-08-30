@@ -3,8 +3,8 @@ package Supermarket.Classes;
 import Supermarket.Interfaces.iActorBehaviour;
 import Supermarket.Interfaces.iReturnOrder;
 
-public class StockClient implements iActorBehaviour, iReturnOrder {
-    private boolean isReturnOrder;
+public class StockClient implements iActorBehaviour {
+
     private boolean isTakeOrder;
     private boolean isMakeOrder;
     public static int countStockClient;
@@ -32,10 +32,6 @@ public class StockClient implements iActorBehaviour, iReturnOrder {
         return isMakeOrder;
     }
 
-    @Override
-    public boolean isReturnOrder() {
-        return isReturnOrder;
-    }
 
     @Override
     public void setTakeOrder(boolean take) {
@@ -47,27 +43,11 @@ public class StockClient implements iActorBehaviour, iReturnOrder {
         isMakeOrder = make;
     }
 
-    @Override
-    public void setReturnOrder(boolean returN) {
-        isReturnOrder = returN;
-    }
+
     @Override
     public Actor getActor() {
         return new OrdinaryClient(name);
     }
 
-    @Override
-    public void setGetBackMoney(boolean b) {
 
-    }
-
-    @Override
-    public void returnOrder() {
-
-    }
-
-    @Override
-    public void takeBackMoney() {
-
-    }
 }

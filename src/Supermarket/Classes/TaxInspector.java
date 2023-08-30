@@ -7,7 +7,7 @@ public class TaxInspector implements iActorBehaviour {
     private String name;
     private boolean isTakeOrder;
     private boolean isMakeOrder;
-    private boolean isReturnOrder;
+
 
 
     public TaxInspector() {
@@ -29,10 +29,7 @@ public class TaxInspector implements iActorBehaviour {
         return isMakeOrder;
     }
 
-    @Override
-    public boolean isReturnOrder() {
-        return false;
-    }
+
 
     @Override
     public void setTakeOrder(boolean take) {
@@ -44,17 +41,13 @@ public class TaxInspector implements iActorBehaviour {
         isMakeOrder = make;
     }
 
-    @Override
-    public void setReturnOrder(boolean returN) { isReturnOrder = returN; }
+
 
     @Override
     public Actor getActor() {
         return new OrdinaryClient(name);
     }
 
-    @Override
-    public void setGetBackMoney(boolean b) {
 
-    }
 
 }

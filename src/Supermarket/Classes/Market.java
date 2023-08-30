@@ -10,7 +10,7 @@ import Supermarket.Interfaces.iQueueBehaviour;
 import Supermarket.Interfaces.iReturnOrder;
 import static Supermarket.Classes.StockClient.countStockClient;
 
-public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
+public class Market implements iMarketBehaviour, iQueueBehaviour {
 
     public int sumStockClients = 0;
 
@@ -61,11 +61,11 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     @Override
     public void giveOrder() {
         for (iActorBehaviour actor : queue) {
-            if (actor.isReturnOrder()) {
+
                 if (actor.isMakeOrder()) {
                     actor.setTakeOrder(true);
                     System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
-                }
+
             }
         }
 
@@ -86,29 +86,14 @@ public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
     @Override
     public void takeOrder() {
         for (iActorBehaviour actor : queue) {
-            if (actor.isReturnOrder()) {
+
                 if (!actor.isMakeOrder()) {
                     actor.setMakeOrder(true);
                     System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
-                }
+
             }
         }
     }
-        @Override
-    public void returnOrder() {
-            for (iActorBehaviour actor : queue) {
-                if (!actor.isReturnOrder()) {
-                    actor.setReturnOrder(true);
-                    System.out.println(actor.getActor().getName() + " клиент сделал возврат заказа ");
-                }
-            }
-    }
-    public void takeBackMoney(){
-        for (iActorBehaviour actor : queue) {
-            if (actor.isReturnOrder()) {
-                actor.setGetBackMoney(true);
-                System.out.println(actor.getActor().getName() + " клиент получил деньги за возвращенный товар ");
-            }
-        }
-    }
+
+
 }

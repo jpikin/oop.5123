@@ -20,16 +20,13 @@ public class OrdinaryClient extends Actor {
     public boolean isMakeOrder() {
         return super.isMakeOrder;
     }
-    public boolean isReturnOrder() {return super.isReturnOrder;}
+
 
     public void setMakeOrder(boolean makeOrder) {
         super.isMakeOrder = makeOrder;
     }
 
-    @Override
-    public void setReturnOrder(boolean returN) {
 
-    }
 
     public Actor getActor()
     {
