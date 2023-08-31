@@ -3,14 +3,17 @@ package Supermarket.Classes;
 import Supermarket.Interfaces.iActorBehaviour;
 import Supermarket.Interfaces.iReturnOrder;
 
-public class StockClient implements iActorBehaviour, iReturnOrder {
-    private boolean isReturnOrder;
+public class StockClient implements iActorBehaviour {
+
     private boolean isTakeOrder;
     private boolean isMakeOrder;
+    private boolean isReturnOrder;
+    private boolean isTakeBackMoney;
     public static int countStockClient;
     public static int maxNumStockClient = 4;
     private int idStockClient;
     private String name;
+    private boolean returnOrder;
 
     public StockClient(String name, int idStockClient) {
         this.name = name;
@@ -38,6 +41,12 @@ public class StockClient implements iActorBehaviour, iReturnOrder {
     }
 
     @Override
+    public boolean isTakeBackMoney() {
+        return isTakeBackMoney;
+    }
+
+
+    @Override
     public void setTakeOrder(boolean take) {
         isTakeOrder=take;
     }
@@ -47,27 +56,11 @@ public class StockClient implements iActorBehaviour, iReturnOrder {
         isMakeOrder = make;
     }
 
-    @Override
-    public void setReturnOrder(boolean returN) {
-        isReturnOrder = returN;
-    }
+
     @Override
     public Actor getActor() {
-        return new OrdinaryClient(name);
+        return new OrdinaryClient(name, returnOrder);
     }
 
-    @Override
-    public void setGetBackMoney(boolean b) {
 
-    }
-
-    @Override
-    public void returnOrder() {
-
-    }
-
-    @Override
-    public void takeBackMoney() {
-
-    }
 }

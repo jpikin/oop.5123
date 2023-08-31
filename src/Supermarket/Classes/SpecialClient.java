@@ -4,8 +4,8 @@ public class SpecialClient extends Actor  {
 
     private int idVIP;
 
-    public SpecialClient(String name, int id) {
-        super(name);
+    public SpecialClient(String name, int id, boolean returnOrder) {
+        super(name, returnOrder);
         this.idVIP = id;
     }
 
@@ -20,6 +20,9 @@ public class SpecialClient extends Actor  {
     public boolean isMakeOrder() {
         return super.isMakeOrder;
     }
+    public boolean isReturnOrder() { return super.isReturnOrder; }
+
+    public boolean isTakeBackMoney() { return super.isTakeBackMoney; }
 
     public void setMakeOrder(boolean makeOrder) {
         super.isMakeOrder = makeOrder;
@@ -29,6 +32,8 @@ public class SpecialClient extends Actor  {
     {
         return this;
     }
+
+
 
     @Override
     public String getName() {

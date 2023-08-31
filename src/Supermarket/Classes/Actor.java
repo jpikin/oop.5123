@@ -1,6 +1,7 @@
 package Supermarket.Classes;
 
 import Supermarket.Interfaces.iActorBehaviour;
+import Supermarket.Interfaces.iReturnOrder;
 
 public abstract class Actor implements iActorBehaviour {
 
@@ -8,9 +9,11 @@ public abstract class Actor implements iActorBehaviour {
     protected boolean isTakeOrder;
     protected boolean isMakeOrder;
     protected boolean isReturnOrder;
+    protected boolean isTakeBackMoney;
 
-    public Actor(String name) {
+    public Actor(String name, boolean isReturnOrder) {
         this.name = name;
+        this.isReturnOrder = isReturnOrder;
     }
 
     abstract public void setName(String name);
