@@ -10,7 +10,7 @@ import Supermarket.Interfaces.iQueueBehaviour;
 import Supermarket.Interfaces.iReturnOrder;
 import static Supermarket.Classes.StockClient.countStockClient;
 
-public class Market implements iMarketBehaviour, iQueueBehaviour {
+public class Market implements iMarketBehaviour, iQueueBehaviour, iReturnOrder {
 
     public int sumStockClients = 0;
 
@@ -55,27 +55,39 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     public void update() {
         takeOrder();
         giveOrder();
+        returnOrder();
         releaseFromQueue();
+    }
+
+    /**
+     * @apiNote Метод проверяет, хочет ли клиент вернуть заказ и возвращает заказ в случае необходимости.
+     */
+    @Override
+    public void returnOrder(){
+        for (iActorBehaviour actor : queue) {
+            if (actor.isReturnOrder()){
+                System.out.println(actor.getActor().getName() + " клиент вернул заказ ");
+            }
+        }
     }
 
     @Override
     public void giveOrder() {
         for (iActorBehaviour actor : queue) {
-
+            if (!actor.isReturnOrder()){
                 if (actor.isMakeOrder()) {
                     actor.setTakeOrder(true);
                     System.out.println(actor.getActor().getName() + " клиент получил свой заказ ");
-
+                }
             }
         }
-
     }
 
     @Override
     public void releaseFromQueue() {
         List<Actor> releaseActors = new ArrayList<>();
         for (iActorBehaviour actor : queue) {
-            if (actor.isTakeOrder()) {
+            if (actor.isTakeOrder() || actor.isReturnOrder()) {
                 releaseActors.add(actor.getActor());
                 System.out.println(actor.getActor().getName() + " клиент ушел из очереди ");
             }
@@ -86,11 +98,11 @@ public class Market implements iMarketBehaviour, iQueueBehaviour {
     @Override
     public void takeOrder() {
         for (iActorBehaviour actor : queue) {
-
+            if (!actor.isReturnOrder()){
                 if (!actor.isMakeOrder()) {
                     actor.setMakeOrder(true);
                     System.out.println(actor.getActor().getName() + " клиент сделал заказ ");
-
+                }
             }
         }
     }

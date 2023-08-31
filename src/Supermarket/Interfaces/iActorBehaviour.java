@@ -6,7 +6,7 @@ public interface iActorBehaviour {
     public boolean isTakeOrder();
     public boolean isMakeOrder();
     public boolean isReturnOrder();
-    public boolean isTakeBackMoney();
+//    public void isTakeBackMoney(boolean takeMoney);
     public void setTakeOrder(boolean take);
     public void setMakeOrder(boolean make);
 

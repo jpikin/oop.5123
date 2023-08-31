@@ -33,8 +33,8 @@ public class TaxInspector implements iActorBehaviour {
     @Override
     public boolean isReturnOrder() {return isReturnOrder; }
 
-    @Override
-    public boolean isTakeBackMoney() {return isTakeBackMoney; }
+//    @Override
+//    public boolean isTakeBackMoney() {return isTakeBackMoney; }
 
     @Override
     public void setTakeOrder(boolean take) {

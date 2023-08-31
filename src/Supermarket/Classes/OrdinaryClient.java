@@ -23,7 +23,7 @@ public class OrdinaryClient extends Actor {
 
     public boolean isReturnOrder() { return super.isReturnOrder; }
 
-    public boolean isTakeBackMoney() { return super.isTakeBackMoney; }
+    //public boolean isTakeBackMoney() { return super.isTakeBackMoney; }
 
     public void setMakeOrder(boolean makeOrder) {
         super.isMakeOrder = makeOrder;

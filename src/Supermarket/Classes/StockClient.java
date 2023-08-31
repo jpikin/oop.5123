@@ -40,10 +40,10 @@ public class StockClient implements iActorBehaviour {
         return isReturnOrder;
     }
 
-    @Override
-    public boolean isTakeBackMoney() {
-        return isTakeBackMoney;
-    }
+//    @Override
+//    public boolean isTakeBackMoney() {
+//        return isTakeBackMoney;
+//    }
 
 
     @Override
