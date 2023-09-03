@@ -23,7 +23,7 @@ public class Student extends Person implements Comparable<Student> {
     }
     @Override
     public String toString(){
-        return super.getName()+ " " + super.getAge() + " " + ID;
+        return "Студент " +super.getName()+ ", возраст " + super.getAge() + ", ID = " + ID;
     }
 }
 
