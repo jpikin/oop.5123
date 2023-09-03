@@ -2,7 +2,7 @@ package Supermarket.Classes;
 
 public class SpecialClient extends Actor  {
 
-    public int idVIP;
+    private int idVIP;
 
     public SpecialClient(String name, int id, boolean returnOrder) {
         super(name, returnOrder);
