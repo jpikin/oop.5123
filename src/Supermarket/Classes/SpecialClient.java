@@ -2,7 +2,7 @@ package Supermarket.Classes;
 
 public class SpecialClient extends Actor  {
 
-    private int idVIP;
+    public int idVIP;
 
     public SpecialClient(String name, int id, boolean returnOrder) {
         super(name, returnOrder);
@@ -21,8 +21,6 @@ public class SpecialClient extends Actor  {
         return super.isMakeOrder;
     }
     public boolean isReturnOrder() { return super.isReturnOrder; }
-
-    public boolean isTakeBackMoney() { return super.isTakeBackMoney; }
 
     public void setMakeOrder(boolean makeOrder) {
         super.isMakeOrder = makeOrder;
@@ -53,11 +51,4 @@ public class SpecialClient extends Actor  {
         this.idVIP = idVIP;
     }
 
-    // public int getIdVIP() {
-    //     return idVIP;
-    // }
-
-    // public void setIdVIP(int idVIP) {
-    //     this.idVIP = idVIP;
-    // }
 }
