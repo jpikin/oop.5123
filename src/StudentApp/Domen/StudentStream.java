@@ -31,6 +31,11 @@ public class StudentStream implements Iterable<StudentGroup>  {
     public String toString(){
         return "Поток номер "+ this.streamID;
     }
+
+    /**
+     * Здесь не понял почему перед new нужно ставить (Iterator<StudentGroup>)
+     * согласился с IDE, когда предложила добавить.
+     */
     @Override
     public Iterator<StudentGroup> iterator() {
         return (Iterator<StudentGroup>) new StudentGroupIterator(groupList);

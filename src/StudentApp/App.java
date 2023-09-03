@@ -50,18 +50,12 @@ public class App {
         studentGroups.add(g5124);
         studentGroups.add(g5125);
 
-//        System.out.println(g5123);
-//        for (Student s: g5123){
-//            System.out.println(s);
-//        }
-//        Collections.sort(g5123.getGroup());
-//        for (Student s: g5123){
-//            System.out.println(s);
-//        }
+
         StudentStream studentStream = new StudentStream(studentGroups, 1);
-        System.out.println(studentStream);
+        System.out.println(studentStream+"\n\n----- Поток до сортировки-----\n");
         printStudentStream(studentGroups);
         Collections.sort(studentStream.getGroupList());
+        System.out.println("\n----- Поток после сортировки-----\n");
         printStudentStream(studentGroups);
 
     }

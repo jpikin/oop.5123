@@ -46,9 +46,12 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
         this.group = group;
     }
 
+    /**
+     * @apiNote Добавляем сортировку по количеству человек в группе
+     * @param o the object to be compared.
+     */
     @Override
     public int compareTo(StudentGroup o) {
-        System.out.println(this.getGroupSize() + " - " + o.getGroupSize());
         int result = Integer.compare(this.getGroupSize(),o.getGroupSize());
         return result;
     }
