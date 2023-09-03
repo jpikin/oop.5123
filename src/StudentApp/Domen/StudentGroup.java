@@ -24,7 +24,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     }
 
     public int getGroupSize() {
-        return this.groupSize;
+        return groupSize;
     }
 
     @Override
@@ -48,15 +48,8 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
 
     @Override
     public int compareTo(StudentGroup o) {
-//        System.out.println(. + " - " + o.getName());
-        if (this.getGroupSize() == o.getGroupSize()){
-            return 0;
-        }
-        else if (this.getGroupSize() == o.getGroupSize()) {
-            return 1;
-        } else {
-            return -1;
-        }
-
+        System.out.println(this.getGroupSize() + " - " + o.getGroupSize());
+        int result = Integer.compare(this.getGroupSize(),o.getGroupSize());
+        return result;
     }
 }

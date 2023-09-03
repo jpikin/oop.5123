@@ -23,6 +23,10 @@ public class StudentStream implements Iterable<StudentGroup>  {
         this.streamID = streamID;
     }
 
+    public List<StudentGroup> getGroupList() {
+        return groupList;
+    }
+
     @Override
     public String toString(){
         return "Поток номер "+ this.streamID;

@@ -36,8 +36,8 @@ public class App {
         listStud2.add(s7);
         listStud2.add(s8);
         listStud2.add(s9);
-        listStud2.add(s10);
         List<Student> listStud3 = new ArrayList<Student>();
+        listStud3.add(s10);
         listStud3.add(s11);
         listStud3.add(s12);
         listStud3.add(s13);
@@ -50,17 +50,20 @@ public class App {
         studentGroups.add(g5124);
         studentGroups.add(g5125);
 
-        System.out.println(g5123);
-        for (Student s: g5123){
-            System.out.println(s);
-        }
-        Collections.sort(g5123.getGroup());
-        for (Student s: g5123){
-            System.out.println(s);
-        }
+//        System.out.println(g5123);
+//        for (Student s: g5123){
+//            System.out.println(s);
+//        }
+//        Collections.sort(g5123.getGroup());
+//        for (Student s: g5123){
+//            System.out.println(s);
+//        }
         StudentStream studentStream = new StudentStream(studentGroups, 1);
         System.out.println(studentStream);
         printStudentStream(studentGroups);
+        Collections.sort(studentStream.getGroupList());
+        printStudentStream(studentGroups);
+
     }
 
     /**
