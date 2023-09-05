@@ -59,11 +59,14 @@ public class App {
         System.out.println("\n----- Поток после сортировки-----\n");
         printStudentStream(studentGroups);
 
-//        System.out.println(new PersonComparator<Student>().compare(s1,s2));
-//        System.out.println(new PersonComparator<Teacher>().compare(t1,t2));
-        AccauntControler controller = new AccauntControler();
-        controller.paySalary(t1,50000);
+        System.out.println(new PersonComparator<Student>().compare(s1,s2));
+        System.out.println(new PersonComparator<Teacher>().compare(t1,t2));
 
+        AccauntControler controller = new AccauntControler(); //без статики нужно создать экземпляр класса
+        controller.paySalary(t1,50000);                 //и потом вызывать методы
+
+        AccauntControler.paySalary(t1,50000); // при статическом методе не нужно создавать экземпляр класса
+        AccauntControler.averageAge(listStud1); // дописать метод
     }
 
     /**
