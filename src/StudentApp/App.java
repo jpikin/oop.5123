@@ -2,6 +2,7 @@ package StudentApp;
 
 import StudentApp.Controlers.AccauntControler;
 import StudentApp.Domen.*;
+import StudentApp.Services.TeacherService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,6 +26,8 @@ public class App {
 
         Teacher t1 = new Teacher("Галина", 35, "Docent");
         Teacher t2 = new Teacher("Mariya", 32, "Docent");
+
+
 
         List<Student> listStud1 = new ArrayList<Student>();
         listStud1.add(s1);
@@ -59,14 +62,12 @@ public class App {
         System.out.println("\n----- Поток после сортировки-----\n");
         printStudentStream(studentGroups);
 
-        System.out.println(new PersonComparator<Student>().compare(s1,s2));
-        System.out.println(new PersonComparator<Teacher>().compare(t1,t2));
-
         AccauntControler controller = new AccauntControler(); //без статики нужно создать экземпляр класса
         controller.paySalary(t1,50000);                 //и потом вызывать методы
 
         AccauntControler.paySalary(t1,50000); // при статическом методе не нужно создавать экземпляр класса
-        AccauntControler.averageAge(listStud1); // дописать метод
+
+        System.out.println("Средний возраст группы: " + AccauntControler.averageAge(listStud1));
     }
 
     /**
