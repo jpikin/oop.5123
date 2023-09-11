@@ -66,6 +66,14 @@ private boolean testDate(HashMap<Long,Student> stud){
                 case LIST:
                     view.printAllStudents(model.getStudents());
                     break;
+                case DELETE:
+                    System.out.println(Lang.IdInput);
+                    Long id = sc.nextLong();
+                    if (model.getStudents().containsKey(id)){
+                        model.getStudents().remove(id);
+                    } else {
+                        System.out.println(Lang.delError);
+                    }
             }
         }
     }

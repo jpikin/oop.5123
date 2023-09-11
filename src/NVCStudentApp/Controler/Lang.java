@@ -10,6 +10,8 @@ public class Lang {
     public static String langExit;
     public static String emptyList;
     public static int flo;
+    public static String IdInput;
+    public static String delError;
 
     /**
      * @apiNote Определяем какой язык устанавливается в приложении исходя
@@ -27,6 +29,8 @@ public class Lang {
             langInput = "Введите команду";
             langExit = "Выход из программы";
             emptyList = "Список студентов пуст";
+            IdInput = "Введите ID Студента";
+            delError = "Студента с таким ID нет";
 
         } else {
             langStud = "Student";
@@ -35,6 +39,8 @@ public class Lang {
             langInput = "Enter command: ";
             langExit = "EXIT.";
             emptyList = "empty list";
+            IdInput = "input student ID";
+            delError = "There is no student with this ID";
         }
     }
 }
