@@ -9,19 +9,19 @@ public class Lang {
     public static String langInput;
     public static String langExit;
     public static String emptyList;
-    public static int flo;
     public static String IdInput;
     public static String delError;
+    public static int setLanguage;
 
     /**
      * @apiNote Определяем какой язык устанавливается в приложении исходя
      * из выбора пользователя.
      */
     public static void setLang() {
-        flo = ControllerClass.lang;
+        setLanguage = ControllerClass.lang;
 
 
-        if (flo == 1) {
+        if (setLanguage == 1) {
 
             langStud = "Студент";
             langAge = "возраст";

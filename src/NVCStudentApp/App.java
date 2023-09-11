@@ -16,8 +16,9 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         iGetView view;
-//        List<Student> students = new ArrayList<>();
-        HashMap<Long,Student> students = new HashMap<>();
+
+
+
         Student s1 = new Student("Serg", 21);
         Student s2 = new Student("Mark", 21);
         Student s3 = new Student("Oleg", 21);
@@ -25,7 +26,7 @@ public class App {
         Student s5 = new Student("Olga", 21);
         Student s6 = new Student("Eva", 21);
         Student s7 = new Student("Margo", 21);
-
+//        List<Student> students = new ArrayList<>();
 //        students.add(s1);
 //        students.add(s2);
 //        students.add(s3);
@@ -33,6 +34,8 @@ public class App {
 //        students.add(s5);
 //        students.add(s6);
 //        students.add(s7);
+
+        HashMap<Long,Student> students = new HashMap<>();
         students.put(s1.getID(), s1);
         students.put(s2.getID(), s2);
         students.put(s3.getID(), s3);
