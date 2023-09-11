@@ -6,13 +6,15 @@ import NVCStudentApp.Model.Core.Student;
 import java.util.HashMap;
 import java.util.List;
 
-public class ModelClassList implements iGetModel {
-    private HashMap<Long,Student> students;
-    public ModelClassList(HashMap<Long,Student> students){
+public class ModelClassList {
+    private List<Student> students;
+
+    public ModelClassList(List<Student> students){
         this.students = students;
     }
 
-    public HashMap<Long,Student> getStudents() {
+    public List<Student> getStudents() {
         return students;
     }
+
 }

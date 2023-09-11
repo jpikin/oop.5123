@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class ModelClassHash implements iGetModel {
+
     private HashMap<Long,Student> students;
     public ModelClassHash(HashMap<Long,Student> students){
         this.students = students;
