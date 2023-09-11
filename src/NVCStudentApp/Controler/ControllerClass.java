@@ -7,13 +7,14 @@ import NVCStudentApp.View.ViewClass;
 import NVCStudentApp.Model.Core.Student;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 public class ControllerClass {
     private iGetModel model;
     private iGetView view;
-    private List<Student> students = new ArrayList<>();
+    private HashMap<Long,Student> students = new HashMap<>();
     public static int lang;
 
     Scanner sc = new Scanner(System.in);
@@ -25,7 +26,7 @@ public class ControllerClass {
 
 
     }
-private boolean testDate(List<Student> stud){
+private boolean testDate(HashMap<Long,Student> stud){
         if(stud.size()>0) return true;
         else return false;
 }

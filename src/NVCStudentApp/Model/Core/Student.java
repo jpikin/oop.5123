@@ -6,25 +6,23 @@ import NVCStudentApp.Model.Core.Person;
 
 public class Student extends Person {
 
-    private int ID;
-    private static int generalID;
+//    private int ID;
+    private Long ID;
+    private static Long generalID = 0L;
 
     public Student(String name, int age) {
         super(name, age);
-        this.ID = generalID;
-        generalID++;
+        this.ID = generalID++;
+//        generalID++;
     }
 
-    public int getID() {
+    public Long getID() {
         return ID;
     }
 
 
     @Override
-
     public String toString() {
-
-            return Lang.langStud + " " + super.getName() + ", "+ Lang.langAge+ ": " + super.getAge() + ", ID = " + ID;
-
+        return Lang.langStud + " " + super.getName() + ", " + Lang.langAge + ": " + super.getAge() + ", ID = " + ID;
     }
 }
