@@ -1,6 +1,6 @@
 package NVCStudentApp.Controler.Interfaces;
 
-import StudentApp.Domen.Student;
+import NVCStudentApp.Model.Core.Student;
 
 import java.util.List;
 

@@ -5,13 +5,15 @@ import NVCStudentApp.Controler.Interfaces.iGetModel;
 import NVCStudentApp.Controler.Interfaces.iGetView;
 import NVCStudentApp.Model.ModelClassList;
 import NVCStudentApp.View.ViewClass;
-import StudentApp.Domen.Student;
+import NVCStudentApp.View.ViewEng;
+import NVCStudentApp.Model.Core.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class App {
     public static void main(String[] args) {
+        iGetView view;
         List<Student> students = new ArrayList<>();
         Student s1 = new Student("Serg", 21);
         Student s2 = new Student("Mark", 21);
@@ -29,16 +31,18 @@ public class App {
         students.add(s6);
         students.add(s7);
 
-//        ModelClassList modelList = new ModelClassList(students);
-//        ViewClass view = new ViewClass();
 
         iGetModel modelList = new ModelClassList(students);
-        iGetView view = new ViewClass();
+        if (ControllerClass.lang == 1) {
+            view = new ViewClass();
+        } else {
+            view = new ViewEng();
+        }
 
-        ControllerClass controller = new ControllerClass(modelList,view);
+        ControllerClass controller = new ControllerClass(modelList, view);
 
 //        controller.update();
         controller.run();
-//        view.printAllStudents(students);
+
     }
 }

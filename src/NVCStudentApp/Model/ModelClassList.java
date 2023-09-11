@@ -1,7 +1,7 @@
 package NVCStudentApp.Model;
 
 import NVCStudentApp.Controler.Interfaces.iGetModel;
-import StudentApp.Domen.Student;
+import NVCStudentApp.Model.Core.Student;
 
 import java.util.List;
 

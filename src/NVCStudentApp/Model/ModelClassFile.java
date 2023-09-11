@@ -1,6 +1,6 @@
 package NVCStudentApp.Model;
 
-import StudentApp.Domen.Student;
+import NVCStudentApp.Model.Core.Student;
 
 import java.io.BufferedReader;
 import java.io.File;

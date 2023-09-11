@@ -4,15 +4,19 @@ import NVCStudentApp.Controler.Interfaces.iGetModel;
 import NVCStudentApp.Controler.Interfaces.iGetView;
 import NVCStudentApp.Model.ModelClassList;
 import NVCStudentApp.View.ViewClass;
-import StudentApp.Domen.Student;
+import NVCStudentApp.Model.Core.Student;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ControllerClass {
     private iGetModel model;
     private iGetView view;
     private List<Student> students = new ArrayList<>();
+    public static int lang;
+
+    Scanner sc = new Scanner(System.in);
 
 
     public ControllerClass(iGetModel model, iGetView view) {
@@ -31,22 +35,32 @@ private boolean testDate(List<Student> stud){
         if(testDate(students)) {
             view.printAllStudents(students);
         } else {
-            System.out.println("Список студентов пуст");
+            System.out.println(Lang.emptyList);
         }
         //MVC
         //        view.printAllStudents(model.getStudents());
     }
     public void run(){
+
+        /**
+         * @apiNote Выбираем язык приложения.
+         */
+        System.out.println("Выберите язык/Choice language:");
+        System.out.println("1 - RU\n2 - ENG");
+        lang = sc.nextInt();
+        Lang.setLang();
+
+
         Command com = Command.NONE;
         boolean getNewIteration = true;
         while(getNewIteration)
         {
-            String command = view.promt("Введите команду");
+            String command = view.promt(Lang.langInput);
             com = Command.valueOf(command.toUpperCase());
             switch (com){
                 case EXIT:
                     getNewIteration = false;
-                    System.out.println("Выход из программы");
+                    System.out.println(Lang.langExit);
                     break;
                 case LIST:
                     view.printAllStudents(model.getStudents());
