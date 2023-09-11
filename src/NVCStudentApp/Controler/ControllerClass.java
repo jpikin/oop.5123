@@ -70,6 +70,7 @@ private boolean testDate(HashMap<Long,Student> stud){
                     System.out.println(Lang.IdInput);
                     Long id = sc.nextLong();
                     if (model.getStudents().containsKey(id)){
+                        System.out.println(model.getStudents().get(id) + " - " +Lang.delMessage);
                         model.getStudents().remove(id);
                     } else {
                         System.out.println(Lang.delError);

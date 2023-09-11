@@ -11,6 +11,7 @@ public class Lang {
     public static String emptyList;
     public static String IdInput;
     public static String delError;
+    public static String delMessage;
     public static int setLanguage;
 
     /**
@@ -31,6 +32,7 @@ public class Lang {
             emptyList = "Список студентов пуст";
             IdInput = "Введите ID Студента";
             delError = "Студента с таким ID нет";
+            delMessage = "удален из списка";
 
         } else {
             langStud = "Student";
@@ -41,6 +43,7 @@ public class Lang {
             emptyList = "empty list";
             IdInput = "input student ID";
             delError = "There is no student with this ID";
+            delMessage = "deleted from list";
         }
     }
 }
