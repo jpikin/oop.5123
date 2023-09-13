@@ -17,8 +17,6 @@ public class App {
     public static void main(String[] args) {
         iGetView view;
 
-
-
         Student s1 = new Student("Serg", 20);
         Student s2 = new Student("Mark", 21);
         Student s3 = new Student("Oleg", 22);
@@ -27,6 +25,7 @@ public class App {
         Student s6 = new Student("Eva", 21);
         Student s7 = new Student("Margo", 23);
         Student s8 = new Student("Kirill", 22);
+
         List<Student> studentsList = new ArrayList<>();
         studentsList.add(s1);
         studentsList.add(s2);
