@@ -1,9 +1,11 @@
-package Solid;
+package Solid.Vehicle;
 
-public class Vehicle {
+
+public class Car extends Vehicle{
     int maxSpeed;
-    String type;
-    public Vehicle(int maxSpeed) {
+    String type = "Car";
+    public Car(int maxSpeed) {
+        super(maxSpeed);
         this.maxSpeed = maxSpeed;
         this.type = type;
     }
@@ -14,3 +16,4 @@ public class Vehicle {
         return this.type;
     }
 }
+
