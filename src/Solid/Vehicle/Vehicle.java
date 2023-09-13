@@ -1,16 +1,14 @@
 package Solid.Vehicle;
 
 public class Vehicle {
-    int maxSpeed;
-    String type;
-    public Vehicle(int maxSpeed) {
-        this.maxSpeed = maxSpeed;
-        this.type = type;
-    }
+    private int maxSpeed;
+    private String type;
+    private double speedCoefficient;
+
     public int getMaxSpeed() {
         return this.maxSpeed;
     }
-    public String getType() {
-        return this.type;
+    public double GetSpeedCoefficient() {
+        return this.speedCoefficient;
     }
 }
