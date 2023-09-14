@@ -15,5 +15,10 @@ public class Car extends Vehicle{
     public String getType() {
         return this.type;
     }
+
+    @Override
+    public double calculateAllowedSpeed(){
+        return getMaxSpeed() * 0.8;
+    }
 }
 

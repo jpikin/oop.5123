@@ -13,4 +13,8 @@ public class Vehicle {
     public String getType() {
         return this.type;
     }
+
+    public double calculateAllowedSpeed(){
+        return 0.0;
+    }
 }
