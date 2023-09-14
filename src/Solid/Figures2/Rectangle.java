@@ -1,15 +1,9 @@
 package Solid.Figures2;
 
-public class Rectangle {
+public class Rectangle implements GetArea{
     private int width;
     private int height;
-    public void setWidth(int width) {
-        this.width = width;
-    }
-    public void setHeight(int height) {
-        this.height = height;
-    }
-    public int area() {
+    public int findArea(){
         return this.width * this.height;
     }
 }

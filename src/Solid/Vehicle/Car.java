@@ -2,12 +2,12 @@ package Solid.Vehicle;
 
 
 public class Car extends Vehicle{
-    int maxSpeed;
-    String type = "Car";
+    private int maxSpeed;
+    private String type;
+    private double speedCoefficient;
     public Car(int maxSpeed) {
-        super(maxSpeed);
         this.maxSpeed = maxSpeed;
-        this.type = type;
+        this.type = "Car";
     }
     public int getMaxSpeed() {
         return this.maxSpeed;
@@ -17,8 +17,8 @@ public class Car extends Vehicle{
     }
 
     @Override
-    public double calculateAllowedSpeed(){
-        return getMaxSpeed() * 0.8;
+    public double GetSpeedCoefficient() {
+        return this.speedCoefficient;
     }
 }
 
