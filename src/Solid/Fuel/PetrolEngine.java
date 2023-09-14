@@ -1,7 +1,15 @@
 package Solid.Fuel;
 
-interface PetrolEngine {
+public class PetrolEngine extends Engine{
     String engineType = "PetrolEngine";
-    String setEngine();
+
+    public PetrolEngine(String engineType) {
+        super(engineType);
+        this.engineType = "PetrolEngine";
+    }
+    public void start(){
+        System.out.println("Машина заведена");
+    }
+
 
 }
