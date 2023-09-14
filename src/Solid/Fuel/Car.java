@@ -1,8 +1,8 @@
 package Solid.Fuel;
 
 public class Car {
-    private PetrolEngine engine;
-    public Car(PetrolEngine engine) {
+    private Engine engine;
+    public Car(Engine engine) {
         this.engine = engine;
     }
     public void start() {

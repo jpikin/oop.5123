@@ -1,6 +1,6 @@
 package Solid.Fuel;
 
-public class PetrolEngine {
-    public void start() {
-    }
+interface PetrolEngine {
+String engineType="PetrolEngine";
+
 }
