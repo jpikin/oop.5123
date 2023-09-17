@@ -21,6 +21,12 @@ public final class Calculator implements iCalculable {
     }
 
     @Override
+    public iCalculable div(int arg) {
+        primaryArg /= arg;
+        return  this;
+    }
+
+    @Override
     public int getResult() {
         return primaryArg;
     }

@@ -31,6 +31,14 @@ public class Decorator implements iCalculable {
         logger.log(String.format("Вызова метода multi произошел"));
         return result;
     }
+    @Override
+    public iCalculable div(int arg) {
+        int firstArg = oldCalculator.getResult();
+        logger.log(String.format("Первое значение калькулятора %d. Начало вызова метода div с параметром %d", firstArg, arg));
+        iCalculable result = oldCalculator.div(arg);
+        logger.log(String.format("Вызова метода div произошел"));
+        return result;
+    }
 
     @Override
     public int getResult() {
