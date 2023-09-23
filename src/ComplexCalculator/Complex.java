@@ -1,4 +1,4 @@
-package Patterns.ComplexCalculator;
+package ComplexCalculator;
 
 import java.util.Scanner;
 
@@ -8,16 +8,11 @@ public class Complex {
     double image;
 
     public Complex() {
-        String stringNum = sc.nextLine();
-//        stringNum = stringNum.substring(0,stringNum.length()-2);
-        double real = RealComplexFromString(stringNum);
-        double image = ImageComplexFromString(stringNum);
-        Complex(real,image);
+        this.real = 0;
+        this.image = 0;
+
     }
-    private void Complex(double real, double image){
-        this.real = real;
-        this.image = image;
-    }
+
     private double RealComplexFromString(String tempStringNum){
         tempStringNum = tempStringNum.substring(0, tempStringNum.indexOf('+'));
         return Double.parseDouble(tempStringNum);
@@ -25,5 +20,11 @@ public class Complex {
     private double ImageComplexFromString(String tempStringNum){
         tempStringNum = tempStringNum.substring(tempStringNum.indexOf('+')+1, tempStringNum.length()-1);
         return Double.parseDouble(tempStringNum);
+    }
+    public Complex setComplex(){
+        String stringNum = sc.nextLine();
+        this.real = RealComplexFromString(stringNum);
+        this.image = ImageComplexFromString(stringNum);
+        return this;
     }
 }

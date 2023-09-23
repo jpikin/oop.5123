@@ -1,5 +1,4 @@
 package Patterns.Decorator;
-
 public final class Calculator implements iCalculable {
 
     private int primaryArg;
